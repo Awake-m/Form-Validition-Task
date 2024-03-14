@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact-form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="contact-form">
+        <div>
+            <h1 style="color: grey;">Nice to Meet You!</h1> 
+            <h4 style="color: grey;">Have a question or just want to get in touch? Let's chat.</h4> 
+        </div><br><br>
+
+        <form action="" onsubmit="return validation()">
+            <fieldset style="border: none;">
+                <label>
+                    <span class="required">Name: *</span> <br><br>
+                    <input type="text" id="name" value="" placeholder="Enter Your Name"/><br>
+                    <p id="usn"></p><br>
+                </label><br>
+
+                <label>
+                    <span>Email: *</span> <br><br>
+                    <input type="text" id="email" value="" placeholder="Enter Your Email"/><br>
+                    <p id="eml"></p><br>
+                </label><br>
+
+                <label>
+                    <span>Contact Number: *</span> <br><br>
+                    <input type="text" id="contact" name="name" value="" placeholder="Enter Your Email"/><br>
+                    <p id="cnt"></p><br>
+                </label><br>
+
+                <label for="message">
+                    <span class="required">Message: *</span><br><br>
+                    <textarea id="message" name="message" placeholder="Please write your message here."></textarea> 
+                </label><br><br>
+
+                <button name="submit" type="submit" id="submit">Submit</button><br>                
+            </fieldset>
+        </form>
+    </div>
+</body>
+<script>
+
+        function validation()
+        {
+            var un=document.getElementById('name').value;
+            var em=document.getElementById('email').value;
+            var con=document.getElementById('contact').value;
+            var msg=document.getElementById('message').value;
+
+            if(un=="")
+            {
+                document.getElementById('usn').innerHTML="*name is Required";
+                return false;
+            }
+            else if(em=="")
+            {
+                document.getElementById('eml').innerHTML="*Email is Required";
+                return false;
+            }
+            else if(con=="")
+            {
+                document.getElementById('cnt').innerHTML="*Email is Required";
+                return false;
+            }
+            
+        }
+           
+</script>
+</html>
